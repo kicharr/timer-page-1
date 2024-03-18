@@ -1,0 +1,222 @@
+@import "reset.css";
+@import "variables";
+@import "mixins";
+
+@font-face {
+  font-family: "Lato";
+  src: url("../fonts/Lato/Lato-Regular.ttf") format("truetype");
+  font-style: normal;
+  font-weight: 400;
+}
+
+@font-face {
+  font-family: "Lato";
+  src: url("../fonts/Lato/Lato-Bold.ttf") format("truetype");
+  font-style: normal;
+  font-weight: 700;
+}
+
+body {
+  font-family: "Lato", serif;
+  color: $dark;
+}
+
+.container {
+  max-width: 1190px;
+  width: 100%;
+  padding: 0 10px;
+  margin: 0 auto;
+}
+
+.header {
+  padding: 26px 0 22px;
+  border-bottom: 1px solid #ececf0;
+}
+
+.header-content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  &__text {
+    font-size: 15px;
+    color: $grey_2;
+  }
+
+  @include tablet {
+    flex-direction: column;
+  }
+
+  @include mobile {
+    text-align: center;
+  }
+}
+
+.footer {
+  border-top: 1px solid #ececf0;
+  padding: 27px 0 27px;
+}
+
+.footer-content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  &__links {
+    display: flex;
+    gap: 14px;
+  }
+
+  &__link {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background-color: $blue;
+
+    transition: $transition;
+
+    &:hover {
+      opacity: .7;
+    }
+
+    &:active {
+      opacity: .7;
+      transform: scaleY(.97);
+    }
+
+    @include tablet {
+      &:hover {
+        opacity: 1;
+      }
+    }
+  }
+}
+
+.main {
+  padding: 100px 0;
+}
+
+.main-content {
+  display: flex;
+  gap: 84px;
+  align-items: center;
+}
+
+.hero-content {
+
+  &__left {
+    display: flex;
+    flex-direction: column;
+  }
+
+  &__right {
+    max-width: 600px;
+    width: 100%;
+
+    @include laptop {
+      display: none;
+    }
+  }
+
+  &__title {
+    font-weight: 700;
+    font-size: 90px;
+    margin-bottom: 24px;
+
+    @include mobile {
+      font-size: 70px;
+    }
+  }
+
+  &__subtitle {
+    font-weight: 700;
+    font-size: 32px;
+    margin-bottom: 25px;
+
+    @include mobile {
+      font-size: 28px;
+    }
+
+    @include mobile-small {
+      font-size: 22px;
+    }
+  }
+
+  &__text {
+    font-size: 15px;
+    line-height: 146%;
+    color: $grey_2;
+
+    &--big {
+      font-size: 22px;
+      line-height: 132%;
+      margin-bottom: 25px;
+      color: $dark;
+
+      span {
+        text-decoration: underline;
+      }
+
+      @include mobile {
+        font-size: 18px;
+      }
+
+      @include mobile-small {
+        font-size: 16px;
+      }
+    }
+
+    &--small {
+      span {
+        font-weight: 700;
+      }
+    }
+  }
+}
+
+.button {
+  padding: 15px 28px;
+  font-weight: 700;
+  font-size: 15px;
+  line-height: 156%;
+  background-color: $blue;
+  color: #FFFFFF;
+  border-radius: 6px;
+
+  transition: $transition;
+
+  &:hover {
+    opacity: .7;
+  }
+
+  &:active {
+    opacity: .7;
+    transform: scaleY(.97);
+  }
+
+  @include tablet {
+    &:hover {
+      opacity: 1;
+    }
+  }
+
+}
+
+.reload-action {
+  margin-top: 48px;
+  display: flex;
+  align-items: center;
+  gap: 25px;
+
+  @include mobile {
+    flex-direction: column-reverse;
+  }
+}
+
+.timer {
+  font-size: 22px;
+  color: $blue;
+}
